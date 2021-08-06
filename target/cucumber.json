@@ -1,0 +1,290 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3238000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user is on the login page",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-05T20:57:32.339Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Login as a Driver",
+        "description": "",
+        "id": "users-should-be-able-to-login;login-as-a-driver",
+        "after": [
+          {
+            "result": {
+              "duration": 724000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2147000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user enter the drver information",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.the_user_enter_the_drver_information()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1023000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user should me able to login",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.the_user_should_me_able_to_login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login"
+          },
+          {
+            "name": "@driver"
+          },
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@VYT-123"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2556000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user is on the login page",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-05T20:57:39.536Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Login as a Manager",
+        "description": "",
+        "id": "users-should-be-able-to-login;login-as-a-manager",
+        "after": [
+          {
+            "result": {
+              "duration": 743000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3696000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "the user enter the manager information (create a step definition for manager due it is not same in scenario)",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.loginAsSaleManager()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1010000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the user should me able to login",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.the_user_should_me_able_to_login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login"
+          },
+          {
+            "name": "@loginManager"
+          },
+          {
+            "name": "@VYT-123"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2431000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user is on the login page",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-05T20:57:47.549Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Login as a Store Manager",
+        "description": "",
+        "id": "users-should-be-able-to-login;login-as-a-store-manager",
+        "after": [
+          {
+            "result": {
+              "duration": 764000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2105000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the user enter the store manager information",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.theUserEnterTheStoreManager()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1015000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the user should me able to login",
+            "match": {
+              "location": "com.vytrack.step_definitions.LoginStepDefs.the_user_should_me_able_to_login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login"
+          },
+          {
+            "name": "@loginStoreManager"
+          },
+          {
+            "name": "@smoke"
+          }
+        ]
+      }
+    ],
+    "name": "Users should be able to login",
+    "description": "",
+    "id": "users-should-be-able-to-login",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/login.feature",
+    "tags": [
+      {
+        "name": "@login",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
