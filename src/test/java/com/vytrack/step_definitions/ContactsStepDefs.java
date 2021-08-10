@@ -9,7 +9,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -40,12 +43,22 @@ public class ContactsStepDefs {
     public void the_user_should_see_following_options(List<String> menuOptions) {
        BrowserUtils.waitForPageToLoad(5);
         //get the list on web elements locator in basePage and assert
-        List<String> actualOptions = BrowserUtils.getElementsText(new DashboardPage().menuOptions);
+       // List<String> actualOptions = BrowserUtils.getElementsText(new DashboardPage().menuOptions);
 
-        Assert.assertEquals(menuOptions,actualOptions);
+       // System.out.println("11"  + actualOptions);
+        System.out.println("Dime el texto"+Driver.get().findElement(By.xpath("(//*[@class='title title-level-1'])[1]")).getText());
+
+        List<WebElement> acEL = new DashboardPage().menuOptions;
+        List<String> saveEl = new ArrayList<>();
+        for(WebElement each : acEL ){
+            saveEl.add(each.getAttribute(""));
+        }
 
         System.out.println("menu options: " + menuOptions);
-        System.out.println("actual options: " + actualOptions);
+        System.out.println("actual options: " + saveEl);
+
+        Assert.assertEquals(menuOptions,saveEl);
+
 
     }
 

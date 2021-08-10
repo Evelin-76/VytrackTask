@@ -1,12 +1,13 @@
 Feature: Contacts page
 
-
+@wip @smoke
   Scenario: Default page number
     Given the user is on the login page
     And the user enter the drver information
     When navigate to "Customers" "Contacts"
     Then default page number should be 1
 
+  @wip
     Scenario: Verify Create Calendar Eventdesencadenar
       Given the user is on the login page
       And the user enter the drver information
@@ -20,7 +21,7 @@ Feature: Contacts page
       | Customers |
       | Activities |
       | System |
-
+  @wip @smoke
     Scenario: login as a given user
       Given the user is on the login page
       When the user logs in using following credentials

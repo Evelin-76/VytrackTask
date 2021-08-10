@@ -13,7 +13,7 @@ Background:
     #  |adminis --> commented out since it is not valid and make test fails
       |sales manager|
 
-  @wip
+
     Scenario Outline: Login users, tabs, modules and titles different
     Given the user logged in as "<userType>"
     When  navigate to "<tab>" "<module>"
