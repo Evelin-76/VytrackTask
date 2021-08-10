@@ -6,7 +6,7 @@ Feature: Contacts page
     And the user enter the drver information
     When navigate to "Customers" "Contacts"
     Then default page number should be 1
-  @wip
+
     Scenario: Verify Create Calendar Eventdesencadenar
       Given the user is on the login page
       And the user enter the drver information
