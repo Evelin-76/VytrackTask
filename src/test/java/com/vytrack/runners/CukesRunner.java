@@ -7,13 +7,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"json:target/cucumber.json"
+        plugin = {"json:target/cucumber.json",
+                "rerun:target/rerun.txt"
        // "html:target/default-html-features" ->to get report.It override itself. No need if we use json
                 },
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@wip"
     )
 
 public class CukesRunner {

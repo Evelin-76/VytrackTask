@@ -21,7 +21,7 @@ Feature: Contacts page
       | Customers |
       | Activities |
       | System |
-  @wip @smoke
+
     Scenario: login as a given user
       Given the user is on the login page
       When the user logs in using following credentials
