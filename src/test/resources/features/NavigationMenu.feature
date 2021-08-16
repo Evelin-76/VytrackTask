@@ -16,7 +16,7 @@ Feature: Managers navigate to pages using top menu
       When  user navigates to Marketing,Campaings
       Then the title should be Campaigns
 
-     @wip @ActivitiesModule
+    @ActivitiesModule
     Scenario: Navigate to Activities / Calendar Events
       Given  the user is on the login page
       And the user enter the manager information
