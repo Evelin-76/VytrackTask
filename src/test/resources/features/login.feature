@@ -3,12 +3,12 @@ Feature: Users should be able to login
 
   Background:
     Given the user is on the login page
-  @wip
+
   @driver  @smoke @VYT-123
   Scenario: Login as a Driver
     When the user enter the drver information
     Then the user should me able to login
-
+  @wip
     @loginManager @VYT-123
   Scenario: Login as a Manager
     When the user enter the manager information (create a step definition for manager due it is not same in scenario)

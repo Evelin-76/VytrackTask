@@ -6,7 +6,7 @@ Feature: Login as different users
     When the user logs in using "user10" and "UserUser123"
     Then the user should me able to login
     And the title contains "Dashboard"
-
+@wip
     @homework
     Scenario: login as a UserType
       Given the user is on the login page
