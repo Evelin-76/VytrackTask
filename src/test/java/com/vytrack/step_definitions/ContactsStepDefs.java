@@ -1,17 +1,20 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.pages.ContactInfoPage;
+import com.vytrack.pages.ContactsPage;
 import com.vytrack.pages.DashboardPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.DBUtils;
 import com.vytrack.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -76,6 +79,53 @@ public class ContactsStepDefs {
         Assert.assertEquals(expectedName,actualName);
         System.out.println(expectedName);
         System.out.println(actualName);
+    }
+
+    @And("user navigate to {string} {string}")
+    public void userNavigateTo(String tab, String module) {
+        new DashboardPage().navigateToModule(tab,module);
+    }
+
+    @When("the user clicks the {string} from contacts")
+    public void theUserClicksTheFromContacts(String email) {
+        BrowserUtils.waitFor(3);
+        ContactsPage contactsPage = new ContactsPage();
+        contactsPage.getContactEmail(email).click();
+    }
+
+    @Then("the information should be same with database")
+    public void theInformationShouldBeSameWithDatabase() {
+        BrowserUtils.waitFor(3);
+        //get info from UI
+        ContactInfoPage contactInfoPage = new ContactInfoPage();
+        String fullNameText = contactInfoPage.fullName.getText();
+        String emailText = contactInfoPage.email.getText();
+        String phoneNumber = contactInfoPage.phoneNumber.getText();
+
+        System.out.println(fullNameText + " - " + emailText + " - " + phoneNumber);
+
+        //get info from DB:
+        //getting one row (copied and pasted from MySQL query)
+        String query =
+                "SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) AS \"full name\", E.EMAIL, PHONE " +
+                "FROM OROCRM_CONTACT C "+
+                "JOIN OROCRM_CONTACT_EMAIL E "+
+                "ON C.ID = E.OWNER_ID "+
+                "JOIN OROCRM_CONTACT_PHONE P "+
+                "ON C.ID = P.OWNER_ID "+
+                "WHERE E.EMAIL = 'mbrackstone9@example.com'";
+
+        Map<String,Object> rowMap = DBUtils.getRowMap(query);
+        String expectedFullName = (String) rowMap.get("full name");
+        String expectedPhone = (String) rowMap.get("phone");
+        String expectedEmail = (String) rowMap.get("email");
+        System.out.println("Expected full name " + expectedFullName);
+        System.out.println("Expected phone " + expectedPhone);
+        System.out.println("Expected email " + expectedEmail);
+
+
+
+        //assertion
 
 
 

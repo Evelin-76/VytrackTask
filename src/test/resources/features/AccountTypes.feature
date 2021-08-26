@@ -39,3 +39,9 @@ Background:
     | user           | firstName | lastName      |
     | user10         | Brenden   | Schneider     |
     | storemanager85 | Stephan   |Tremaine Haley |
+@db
+     Scenario:
+       Given the user logged in as "sales manager"
+       And user navigate to "Customers" "Contacts"
+       When the user clicks the "mbrackstone9@example.com" from contacts
+       Then the information should be same with database

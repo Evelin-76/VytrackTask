@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.utilities.DBUtils;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -15,6 +16,7 @@ public class Hooks {
     @Before
     public void setUp() throws InterruptedException {
 
+
     }
     @After
     public void tearDown(Scenario scenario){
@@ -22,16 +24,18 @@ public class Hooks {
             final byte[] screenshot = ( (TakesScreenshot)Driver.get() ).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png", "screenshot");
          }
-
         Driver.closeDriver();
     }
-  /*  @Before("@db")
+    @Before("@db")
     public void setUpdb(){
         System.out.println("DataBase conection in BEFORE method");
+        //create conex
+        DBUtils.createConnection();
     }
     @After("@db")
-    public void tearDowndb(){
+    public void tearDowndb() {
         System.out.println("DataBAse conection in AFTER method");
-
-    }*/
+        //close conex
+        DBUtils.destroy();
+    }
 }
