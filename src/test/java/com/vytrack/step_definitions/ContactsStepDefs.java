@@ -98,11 +98,13 @@ public class ContactsStepDefs {
         BrowserUtils.waitFor(3);
         //get info from UI
         ContactInfoPage contactInfoPage = new ContactInfoPage();
-        String fullNameText = contactInfoPage.fullName.getText();
-        String emailText = contactInfoPage.email.getText();
-        String phoneNumber = contactInfoPage.phoneNumber.getText();
+        String actualfullName = contactInfoPage.fullName.getText();
+        String actualEmail = contactInfoPage.email.getText();
+        String actualPhoneNumber = contactInfoPage.phoneNumber.getText();
 
-        System.out.println(fullNameText + " - " + emailText + " - " + phoneNumber);
+        System.out.println("Actual full name " + actualfullName);
+        System.out.println("Actual phone " + actualPhoneNumber);
+        System.out.println("Actual email " + actualEmail);
 
         //get info from DB:
         //getting one row (copied and pasted from MySQL query)
@@ -123,9 +125,10 @@ public class ContactsStepDefs {
         System.out.println("Expected phone " + expectedPhone);
         System.out.println("Expected email " + expectedEmail);
 
-
-
         //assertion
+        Assert.assertEquals(actualfullName,expectedFullName);
+        Assert.assertEquals(actualEmail,expectedEmail);
+        Assert.assertEquals(actualPhoneNumber,expectedPhone);
 
 
 

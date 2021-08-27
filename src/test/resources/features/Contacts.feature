@@ -30,3 +30,4 @@ Feature: Contacts page
       | firstname| Brenden |
       | lastname | Schneider |
       Then the user should me able to login
+
