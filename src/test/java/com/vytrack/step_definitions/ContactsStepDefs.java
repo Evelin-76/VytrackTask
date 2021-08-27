@@ -88,7 +88,7 @@ public class ContactsStepDefs {
 
     @When("the user clicks the {string} from contacts")
     public void theUserClicksTheFromContacts(String email) {
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(5);
         ContactsPage contactsPage = new ContactsPage();
         contactsPage.getContactEmail(email).click();
     }
